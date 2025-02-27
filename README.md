@@ -109,113 +109,113 @@ Payment gateway integration for secure transactions
 ## 9. Data Requirements
 - **Data Models**:
 - **User**
-- userId (Primary Key)
-- firstName
-- lastName
-- email
-- password
-- mobileNumber
-- dateOfBirth
-- bookingHistory
-- address
+  - userId (Primary Key)
+  - firstName
+  - lastName
+  - email
+  - password
+  - mobileNumber
+  - dateOfBirth
+  - bookingHistory
+  - address
 
 - **Passenger**
-- passengerId(Primary Key)
-- userId(Foreign Key)
-- firstName
-- lastName
-- email
-- mobileNumber
-- baggageDetails
-- otherDetails
-- passengerType
+  - passengerId(Primary Key)
+  - userId(Foreign Key)
+  - firstName
+  - lastName
+  - email
+  - mobileNumber
+  - baggageDetails
+  - otherDetails
+  - passengerType
 
 - **Booking**
-- bookingId(Primary Key)
-- userId(Foreign Key)
-- flightId(Foreign Key)
-- passengerCount
-- bookingDate
-- flightType
-- totalPrice
+  - bookingId(Primary Key)
+  - userId(Foreign Key)
+  - flightId(Foreign Key)
+  - passengerCount
+  - bookingDate
+  - flightType
+  - totalPrice
 
 - **Flight**
-- flightId(Primary Key)
-- airlineId(Foreign Key)
-- fromLocation
-- toLocation
-- departureDate
-- arrivalDate
-- seatsAvailable
-- price
+  - flightId(Primary Key)
+  - airlineId(Foreign Key)
+  - fromLocation
+  - toLocation
+  - departureDate
+  - arrivalDate
+  - seatsAvailable
+  - price
 
 - **Ticket**
-- ticketId(Primary Key)
-- bookingId(Foreign Key)
-- passengerId(Foreign Key)
-- seatNumber
-- ticketStatus
-- issueDate
-- ticketNumber
+  - ticketId(Primary Key)
+  - bookingId(Foreign Key)
+  - passengerId(Foreign Key)
+  - seatNumber
+  - ticketStatus
+  - issueDate
+  - ticketNumber
 
 - **Payments**
-- paymentId(Primary Key)
-- bookingId(Foreign Key)
-- amount
-- paymentDate
-- paymentMethod
-- paymentStatus
+  - paymentId(Primary Key)
+  - bookingId(Foreign Key)
+  - amount
+  - paymentDate
+  - paymentMethod
+  - paymentStatus
 
 - **Airline**
-- airlineId(Primary Key)
-- name
-- email
-- contactNumber
+  - airlineId(Primary Key)
+  - name
+  - email
+  - contactNumber
 
 - **Database Requirements**:
-- User Collection (Stores user information and booking history)
-- Passenger Collection (Stores passenger details linked to a user)
-- Booking Collection (Stores booking details linked to a user and a flight)
-- Flight Collection (Stores flight information)
-- Ticket Collection (Stores ticket information for passengers)
-- Payments Collection (Stores payment details related to a booking)
-- Airline Collection (Stores airline company details)
+  - User Collection (Stores user information and booking history)
+  - Passenger Collection (Stores passenger details linked to a user)
+  - Booking Collection (Stores booking details linked to a user and a flight)
+  - Flight Collection (Stores flight information)
+  - Ticket Collection (Stores ticket information for passengers)
+  - Payments Collection (Stores payment details related to a booking)
+  - Airline Collection (Stores airline company details)
 
 - **Relationships:**
 
-- User → Booking (One-to-Many): One user can have multiple bookings.
-- Booking → Flight (Many-to-One): Many bookings can belong to a single flight.
-- Booking → Payment (One-to-One): Each booking has one payment record.
-- Airline → Flight (One-to-Many): One airline operates multiple flights.
-- Flight → Booking (One-to-Many): A flight can have multiple bookings.
-- User → Passenger (One-to-Many): A user can register multiple passengers.
-- Passenger → Ticket (One-to-One): Each ticket is assigned to a single passenger.
-- Booking → Ticket (One-to-Many): A booking can include multiple tickets for passengers.
+  - User → Booking (One-to-Many): One user can have multiple bookings.
+  - Booking → Flight (Many-to-One): Many bookings can belong to a single flight.
+  - Booking → Payment (One-to-One): Each booking has one payment record.
+  - Airline → Flight (One-to-Many): One airline operates multiple flights.
+  - Flight → Booking (One-to-Many): A flight can have multiple bookings.
+  - User → Passenger (One-to-Many): A user can register multiple passengers.
+  - Passenger → Ticket (One-to-One): Each ticket is assigned to a single passenger.
+  - Booking → Ticket (One-to-Many): A booking can include multiple tickets for passengers.
 
 - **Data Storage and Retrieval**: 
 - **Data Retrieval Methods**
-- **Fetching a User’s Booking History**
-- { "userId": ObjectId("USER_ID") }
-- Perform a lookup to join with the `Booking` collection to retrieve detailed information.
+  - **Fetching a User’s Booking History**
+    - { "userId": ObjectId("USER_ID") }
+    - Perform a lookup to join with the `Booking` collection to retrieve detailed information.
 
-- **Retrieving Flight Details for a Specific Booking**
-- { "bookingId": ObjectId("BOOKING_ID") }
-- Use an aggregation pipeline to fetch the associated `flightId` details from the Flight collection.
+  - **Retrieving Flight Details for a Specific Booking**
+    - { "bookingId": ObjectId("BOOKING_ID") }
+    - Use an aggregation pipeline to fetch the associated `flightId` details from the Flight collection.
 
-- **Fetching Passenger Information for a Booking**
-- { "bookingId": ObjectId("BOOKING_ID") }
-- Join with the `Ticket` collection and fetch associated `passengerId` data.
+  - **Fetching Passenger Information for a Booking**
+    - { "bookingId": ObjectId("BOOKING_ID") }
+    - Join with the `Ticket` collection and fetch associated `passengerId` data.
 
-- **Retrieving Payment Details for a Booking**
-- { "bookingId": ObjectId("BOOKING_ID") }
-- Directly fetch payment details using `bookingId` as a reference.
+  - **Retrieving Payment Details for a Booking**
+    - { "bookingId": ObjectId("BOOKING_ID") }
+    - Directly fetch payment details using `bookingId` as a reference.
 
-- **Indexing for Performance Optimization**
-- Index on `email` for quick user lookups.
-- Compound index on `{flightId, departureDate}` for fast flight searches.
-- Index `bookingId` in `Payments` and `Tickets` for optimized queries.
+  - **Indexing for Performance Optimization**
+    - Index on `email` for quick user lookups.
+    - Compound index on `{flightId, departureDate}` for fast flight searches.
+    - Index `bookingId` in `Payments` and `Tickets` for optimized queries.
 
-- This MongoDB schema ensures an efficient and scalable design while maintaining data integrity.
+  - This MongoDB schema ensures an efficient and scalable design while maintaining data integrity.
 - **ERD**: https://app.diagrams.net/#G1v0GvuCPxpL7d9ioGvPHoyO4MvZZXl_TJ#%7B%22pageId%22%3A%22mNDo0j1P8SEVuHjTTdoJ%22%7D
 
 ## 10. External Interface Requirements
