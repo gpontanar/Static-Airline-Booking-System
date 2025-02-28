@@ -71,7 +71,7 @@ Requires internet connectivity
 Payment gateway integration for secure transactions
 
 ## 5. Visual Mockup Reference
-- **Link or Screenshot**: https://www.figma.com/design/lOiGafupfytA7AWHaIiGZJ/MCP-Side-Project-(Airline-Booking-System))?node-id=73-2&p=f&t=RQkXxGR3tNBh7vLW-0
+- **Link or Screenshot**: https://www.figma.com/design/lOiGafupfytA7AWHaIiGZJ/MCP-Side-Project-(Airline-Booking-System))?node-id=73-2&p=f&t=tVXqkQW97sn8SgdE-0
 
 ## 6. Features
 - **Feature 1**: Responsive Navigation Bar
