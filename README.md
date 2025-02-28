@@ -665,25 +665,13 @@ Payment gateway integration for secure transactions
 - **Software Interfaces**: Note any software interactions.
 
 ## 11. Glossary
-- **Term 1**: 
-
-**Airline Booking System**: A web-based platform that allows users to search, compare, and book airline tickets.
-
-**Booking Confirmation**: The final step in the booking process where the system generates a confirmation number.
-
-**Itinerary**: A document containing flight details, including departure/arrival times, layovers, and seat assignments.
-
-**Payment Gateway**: A secured service that processes online payments for booking tickets.
-
-**Cloud-Based Deployment**: Hosting the application on cloud servers for scalability and availability.
-
-**Flight Search Filters**: Options such as price range, duration, stops, and airlines to refine search results.
-
-**User Authentication**: The process of verifying a user’s identity through login credentials.
-
-**E-Ticket**: A digital version of a flight ticket sent to the user via email.
-
-- **Term 2**: Definition
+- **Airline Booking System**: A web-based platform that allows users to search, compare, and book airline tickets.
+- **Itinerary**: A document containing flight details, including departure/arrival times, layovers, and seat assignments.
+- **Payment Gateway**: A secured service that processes online payments for booking tickets.
+- **Cloud-Based Deployment**: Hosting the application on cloud servers for scalability and availability.
+- **Flight Search Filters**: Options such as price range, duration, stops, and airlines to refine search results.
+- **User Authentication**: The process of verifying a user’s identity through login credentials.
+- **E-Ticket**: A digital version of a flight ticket sent to the user via email.
 
 ## 12. Appendices
 - **Supporting Information**: Add any additional information here.
