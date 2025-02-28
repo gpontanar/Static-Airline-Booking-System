@@ -668,6 +668,7 @@ Payment gateway integration for secure transactions
 - **Term 1**: 
 
 **Airline Booking System**: A web-based platform that allows users to search, compare, and book airline tickets.
+
 **Booking Confirmation**: The final step in the booking process where the system generates a confirmation number.
 
 **Itinerary**: A document containing flight details, including departure/arrival times, layovers, and seat assignments.
