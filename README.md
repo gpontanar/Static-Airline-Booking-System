@@ -75,10 +75,243 @@ Payment gateway integration for secure transactions
 
 ## 6. Features
 - **Feature 1**: Responsive Navigation Bar
+function responsiveNavigationBar(screenWidth, userClickEvent) {
+    // Define breakpoints for different screen sizes
+    const desktopBreakpoint = 
+    const tabletBreakpoint = 
+    const mobileBreakpoint = 
+    // Check the screen width and adjust the navigation bar layout accordingly
+    if (screenWidth >= desktopBreakpoint) {
+        // Desktop layout
+        setDesktopLayout();
+    } else if (screenWidth >= tabletBreakpoint) {
+        // Tablet layout
+        setTabletLayout();
+    } else {
+        // Mobile layout
+        setMobileLayout();}
+    // Add event listeners for user interactions
+    addUserClickListeners(userClickEvent);
+    // Ensure fallback links in case of JavaScript failure
+    ensureFallbackLinks();}
+    function setDesktopLayout() {
+        // Set the navigation bar layout for desktop screens
+        showFullMenu();
+        hideHamburgerMenu();}
+    function setTabletLayout() {
+        // Set the navigation bar layout for tablet screens
+        showHamburgerMenu();
+        hideFullMenu();}
+    function setMobileLayout() {
+        // Set the navigation bar layout for mobile screens
+        showHamburgerMenu();
+        hideFullMenu();}
+    function showFullMenu() {
+        // Display the full navigation menu
+        let fullMenu = document.getElementById("fullMenu");
+        fullMenu.style.display = "block";}
+    function hideFullMenu() {
+        // Hide the full navigation menu
+        let fullMenu = document.getElementById("fullMenu");
+        fullMenu.style.display = "none";}
+    function showHamburgerMenu() {
+        // Display the hamburger menu
+        let hamburgerMenu = document.getElementById("hamburgerMenu");
+        hamburgerMenu.style.display = "block";}
+    function hideHamburgerMenu() {
+        // Hide the hamburger menu
+        let hamburgerMenu = document.getElementById("hamburgerMenu");
+        hamburgerMenu.style.display = "none";}
+    function addUserClickListeners(userClickEvent) {
+        // Add event listeners for user clicks/taps
+        let hamburgerMenu = document.getElementById("hamburgerMenu");
+        hamburgerMenu.addEventListener("click", toggleMenu);
+        // Handle other user click events if necessary
+        handleUserClicks(userClickEvent);}
+    function toggleMenu() {
+        // Toggle the visibility of the navigation menu
+        let fullMenu = document.getElementById("fullMenu");
+        if (fullMenu.style.display === "none") {
+            fullMenu.style.display = "block";
+        } else {
+            fullMenu.style.display = "none";
+        }}
+    function handleUserClicks(userClickEvent) {
+        // Process user clicks/taps on navigation links
+        let navLinks = document.querySelectorAll(".navLink");
+        navLinks.forEach(link => {
+            link.addEventListener("click", (event) => {
+                // Handle the click event and navigate to the corresponding page
+                navigateToPage(event.target.href);
+            });
+        });
+    }
+    function ensureFallbackLinks() {
+        // Ensure navigation links are accessible in case of JavaScript failure
+        let navLinks = document.querySelectorAll(".navLink");
+        navLinks.forEach(link => {
+            link.setAttribute("href", link.dataset.fallbackUrl);
+        });
+    }
+    function navigateToPage(url) {
+        // Navigate to the specified page
+        window.location.href = url;}
 - **Feature 2**: Flight Search
+              function searchFlights(departureCity, destinationCity, departureDate, returnDate, numberOfPassengers) {
+              // Validate input parameters
+              if (!departureCity || !destinationCity || !departureDate || numberOfPassengers <= 0) {
+              return "Invalid input parameters";
+              }
+              // Check if returnDate is provided for round-trip search
+              let isRoundTrip = returnDate ? true : false;
+              // Fetch available flights from the database or external API
+              let availableFlights = fetchFlights(departureCity, destinationCity, departureDate, isRoundTrip ? returnDate : null, numberOfPassengers);
+              // Check if any flights are available
+              if (availableFlights.length > 0) {
+              // Return the list of available flights
+              return availableFlights;
+              } else {
+              // Return a message indicating no flights are available
+              return "No flights available for the given criteria";
+              }
+              }
+              function fetchFlights(departureCity, destinationCity, departureDate, returnDate, numberOfPassengers) {
+              // This is a placeholder function to simulate fetching flights from a database or external API
+              let flights = [
+              {
+                flightNumber:
+                airline:
+                departureCity:
+                destinationCity: 
+                departureDate:
+                returnDate: 
+                numberOfSeatsAvailable: 
+              },
+              {
+                flightNumber:
+                airline: 
+                departureCity: 
+                destinationCity: 
+                departureDate:
+                returnDate:
+                numberOfSeatsAvailable: 
+              }
+              ];
+              // Filter flights based on input criteria
+              let filteredFlights = flights.filter(flight => {
+              return flight.departureCity === departureCity &&
+              flight.destinationCity === destinationCity &&
+              flight.departureDate === departureDate &&
+              (!returnDate || flight.returnDate === returnDate) &&
+              flight.numberOfSeatsAvailable >= numberOfPassengers;
+              });
+              return filteredFlights;
+              }
 - **Feature 3**: User Authentication(Login/out)
+            function loginUser(email, password) {
+            // Find the user by email
+            let user = findUserByEmail(email);
+            // Check if user exists and password matches
+            if (user && checkPassword(password, user.hashedPassword)) {
+            // Generate an authentication token for the user
+            let token = generateAuthToken(user);
+            return token;
+            } else {
+            // Return an error message if credentials are invalid
+            return "Invalid credentials";
+            }
+            }
 - **Feature 4**: Promotions and Offers
+          function displayPromotionsAndOffers(userPreferences, promotionalCampaigns) {
+              // Validate input parameters
+              if (!userPreferences || !promotionalCampaigns) {
+                  return "Invalid input parameters";
+              }
+              // Fetch applicable promotions based on user preferences
+              let applicablePromotions = fetchApplicablePromotions(userPreferences, promotionalCampaigns);
+              // Apply discount rules to the promotions
+              let discountedOffers = applyDiscountRules(applicablePromotions);
+              // Remove expired promotions
+              let validOffers = removeExpiredPromotions(discountedOffers);
+              // Display the available offers
+              displayOffers(validOffers);
+          }
+          function fetchApplicablePromotions(userPreferences, promotionalCampaigns) {
+              // This is a placeholder function to simulate fetching promotions based on user preferences
+              // In a real implementation, this function would query a promotions database or call an external promotions API
+              // Sample data structure for promotional campaigns
+              let promotions = [
+                  {
+                      promotionId: "PROMO1",
+                      description: "10% off on all flights",
+                      discount: 0.10,
+                      expiryDate: "2025-03-15",
+                      applicableTo: ["flights"]
+                  }
+              ];
+              // Filter promotions based on user preferences
+              let filteredPromotions = promotions.filter(promotion => {
+                  return userPreferences.includes(promotion.applicableTo[0]);
+              });
+              return filteredPromotions;
+          }
+          function applyDiscountRules(promotions) {
+              // Apply discount rules to the promotions
+              promotions.forEach(promotion => {
+                  // Apply discount logic if necessary
+                  promotion.finalPrice = calculateDiscountedPrice(promotion);
+              });
+              return promotions;
+          }
+          function calculateDiscountedPrice(promotion) {
+              // Placeholder function to calculate discounted price
+              // In a real implementation, this would calculate the discount based on the original price and discount rate
+              let originalPrice = 100; // Example original price
+              let finalPrice = originalPrice - (originalPrice * promotion.discount);
+              return finalPrice;
+          }
+          function removeExpiredPromotions(promotions) {
+              // Remove promotions that have expired
+              let currentDate = new Date("2025-02-28"); // Example current date
+              let validPromotions = promotions.filter(promotion => {
+                  return new Date(promotion.expiryDate) > currentDate;
+              });
+              return validPromotions;
+          }
+          function displayOffers(offers) {
+              // Display the available offers
+              offers.forEach(offer => {
+                  console.log(`Promotion: ${offer.description}, Final Price: ${offer.finalPrice}`);
+              });
+          }
 - **Feature 5**: Popular Destinations or Top Flights
+        function displayPopularDestinationsOrTopFlights(flightPopularityData) {
+        // Validate input parameters
+          if (!flightPopularityData) {
+              // Fetch default popular destinations if data is unavailable
+              let defaultPopularDestinations = fetchDefaultPopularDestinations();
+              displayPopularFlights(defaultPopularDestinations);
+              return;
+          }
+          // Display the list of popular flights
+          displayPopularFlights();
+      }
+      function fetchDefaultPopularDestinations() {
+          // This is a placeholder function to simulate fetching default popular destinations
+          // Sample data structure for default popular destinations
+          let defaultDestinations = [
+                  { destination: },
+                  { destination: },
+                  { destination: }
+          ];
+          return defaultDestinations;
+      }
+      function displayPopularFlights(destinations) {
+          // Display the list of popular flights
+          destinations.forEach(destination => {
+              console.log(`Destination: ${destination.destination}`);
+          });
+      }
 - **Feature 6**: Flight Search Results
 - **Feature 7**: Display details and Prices on Flight Results
 - **Feature 8**: Filters and Sorting Options
@@ -420,6 +653,15 @@ Payment gateway integration for secure transactions
 
 ## 11. Glossary
 - **Term 1**: Definition
+              **Airline Booking System**: A web-based platform that allows users to search, compare, and book airline tickets.
+              **Booking Confirmation**: The final step in the booking process where the system generates a confirmation number.
+              **Itinerary**: A document containing flight details, including departure/arrival times, layovers, and seat assignments.
+              **Payment Gateway**: A secured service that processes online payments for booking tickets.
+              **Cloud-Based Deployment**: Hosting the application on cloud servers for scalability and availability.
+              **Flight Search Filters**: Options such as price range, duration, stops, and airlines to refine search results.
+              **User Authentication**: The process of verifying a user’s identity through login credentials.
+              **E-Ticket**: A digital version of a flight ticket sent to the user via email.
+
 - **Term 2**: Definition
 
 ## 12. Appendices
