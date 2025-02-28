@@ -74,30 +74,224 @@ Payment gateway integration for secure transactions
 - **Link or Screenshot**: https://www.figma.com/design/lOiGafupfytA7AWHaIiGZJ/MCP-Side-Project-(Airline-Booking-System))?node-id=73-2&p=f&t=RQkXxGR3tNBh7vLW-0
 
 ## 6. Features
-- **Feature 1**: Description
-- **Feature 2**: Description
-- **Feature 3**: Description
-- (Add more features as necessary)
+- **Feature 1**: Responsive Navigation Bar
+- **Feature 2**: Flight Search
+- **Feature 3**: User Authentication(Login/out)
+- **Feature 4**: Promotions and Offers
+- **Feature 5**: Popular Destinations or Top Flights
+- **Feature 6**: Flight Search Results
+- **Feature 7**: Display details and Prices on Flight Results
+- **Feature 8**: Filters and Sorting Options
+- **Feature 9**: Flight Comparison
+- **Feature 10**: Booking Confirmation
+- **Feature 11**: Footer and Contact details
+- **Feature 12**: Summary of the Booking
+- **Feature 13**: Payment Information
+- **Feature 14**: Download/Print Ticket
+- **Feature 15**: Next Steps: Provide information on check-in time
+- **Feature 16**: User Profile Page
+- **Feature 17**: Search Feature in Profile Page
+- **Feature 18**: Itinerary Details
+- **Feature 19**: About Profile Page
+- **Feature 20**: Upcoming Flights
+
 
 ## 7. Functional Requirements
 ### Use Cases
 - **Use Case 1**:
-  - **Title**: 
-  - **Description**: 
+  - **Title**: Booking a Flight
+  - **Description**: This use case describes how a passenger books a flight through the airline booking system. The passenger selects a flight, enters personal details, makes a payment, and receives a booking confirmation.
   - **Actors**: 
-  - **Preconditions**: 
+    - Primary Actor: Passenger
+    - Secondary Actors: Airline System, Payment Gateway
+  - **Preconditions**:
+    - The passenger has access to the airline booking system (website or mobile app).
+    - The airline has available flights listed in the system.
+    - The passenger has a valid payment method. 
   - **Postconditions**: 
+    - The passenger successfully books a flight and receives a confirmation.
+    - The airline system updates seat availability.
+    - The payment is successfully processed.
   - **Main Flow**: 
+    - The passenger logs into the airline booking system.
+    - The passenger enters travel details (departure and destination, date, number of passengers).
+    - The system displays available flights based on the entered criteria.
+    - The passenger selects a preferred flight.
+    - The passenger provides personal details (name, passport number, contact information).
+    - The passenger selects a payment method and enters payment details.
+    - The system processes the payment through the payment gateway.
+    - Upon successful payment, the system generates a booking confirmation with ticket details.
+    - The system displays the booking confirmation.
   - **Alternate Flows**: 
+    - **No Flights Available**
+      - If no flights match the search criteria, the system displays a message and suggests alternative dates or destinations.
+    - **Payment Fails**
+      - If the payment fails, the system notifies the passenger and provides an option to retry with a different payment method.
+    - **Session Timeout**
+      - If the passenger takes too long to complete the booking, the session expires, and the system prompts them to restart the process.
 
 ### System Features
-- **Feature 1**:
-  - **Description**: 
-  - **Priority**: 
-  - **Inputs**: 
-  - **Processing**: 
-  - **Outputs**: 
-  - **Error Handling**: 
+**Feature 1: Responsive Navigation Bar**
+  - **Description:** A top navigation bar that adjusts to different screen sizes and provides quick access to essential pages.
+  - **Priority:** High
+  - **Inputs:** User clicks/taps, screen resolution
+  - **Processing:** Detects screen size and adjusts layout accordingly
+  - **Outputs:** Visible navigation bar with accessible links
+  - **Error Handling:** Ensure fallback links in case of JavaScript failure
+
+**Feature 2: Flight Search**
+  - **Description:** Allows users to search for flights by providing origin, destination, and travel dates.
+  - **Priority:** High
+  - **Inputs:** Departure city, destination city, departure date, return date (if applicable), number of passengers
+  - **Processing:** Validates input, queries flight database, applies filters
+  - **Outputs:** List of available flights
+  - **Error Handling:** Display messages for invalid inputs or no available flights
+
+**Feature 3: User Authentication (Login/Logout)**
+  - **Description:** Secure login/logout functionality to access user-specific details
+  - **Priority:** High
+  - **Inputs:** Email/username, password
+  - **Processing:** Validate credentials, authenticate user
+  - **Outputs:** Successful login session or error message
+  - **Error Handling:** Incorrect credentials, forgot password option
+
+**Feature 4:** Promotions and Offers
+  - **Description:** Displays discounts, special deals, and offers
+  - **Priority:** Medium
+  - **Inputs:** User preferences, promotional campaigns
+  - **Processing:** Fetch and apply discount rules
+  - **Outputs:** Display available offers
+  - **Error Handling:** Ensure expired promotions are removed
+
+**Feature 5: Popular Destinations or Top Flights**
+  - **Description:** Shows trending flight routes and destinations
+  - **Priority:** Medium
+  - **Inputs:** Flight popularity data
+  - **Processing:** Analyze and rank destinations
+  - **Outputs:** List of popular flights
+  - **Error Handling:** Display default popular destinations if data is unavailable
+
+**Feature 6: Flight Search Results**
+  - **Description:** Displays flight results after a user searches
+  - **Priority:** High
+  - **Inputs:** Search query from flight search feature
+  - **Processing:** Fetch and filter available flights
+  - **Outputs:** List of matching flights
+  - **Error Handling:** Handle cases of no available flights
+
+**Feature 7: Display Details and Prices on Flight Results**
+  - **Description:** Provides detailed information on flight options, including price
+  - **Priority:** High
+  - **Inputs:** Selected flight details
+  - **Processing:** Retrieve and display price and details
+  - **Outputs:** Flight details including fare
+  - **Error Handling:** Handle missing or incorrect pricing data
+
+**Feature 8: Filters and Sorting Options**
+  - **Description:** Allows users to refine search results
+  - **Priority:** Medium
+  - **Inputs:** User-selected filters (airline, price range, duration)
+  - **Processing:** Apply filters and sort results
+  - **Outputs:** Updated flight list
+  - **Error Handling:** Ensure proper filter application
+
+**Feature 9: Flight Comparison**
+  - **Description:** Enables users to compare different flights
+  - **Priority:** Medium
+  - **Inputs:** Selected flights
+  - **Processing:** Display side-by-side comparison
+  - **Outputs:** Comparison table
+  - **Error Handling:** Handle incomplete comparisons
+
+**Feature 10: Booking Confirmation**
+  - **Description:** Confirms successful booking
+  - **Priority:** High
+  - **Inputs:** User booking details
+  - **Processing:** Store booking and generate confirmation
+  - **Outputs:** Confirmation message
+  - **Error Handling:** Handle payment or booking failures
+
+**Feature 11: Footer and Contact Details**
+  - **Description:** Provides contact information and quick links
+  - **Priority:** Low
+  - **Inputs:** Static content
+  - **Processing:** Display footer content
+  - **Outputs:** Visible footer
+  - **Error Handling:** Ensure all links are functional
+
+**Feature 12: Summary of the Booking**
+  - **Description:** Displays a summary before finalizing booking
+  - **Priority:** High
+  - **Inputs:** Flight and passenger details
+  - **Processing:** Fetch and format booking summary
+  - **Outputs:** Booking summary display
+  - **Error Handling:** Validate all details before proceeding
+
+**Feature 13: Payment Information**
+  - **Description:** Allows secure payment processing
+  - **Priority:** High
+  - **Inputs:** Payment details (card number, CVV, expiration)
+  - **Processing:** Process payment through a secure gateway
+  - **Outputs:** Payment success/failure notification
+  - **Error Handling:** Handle invalid payments securely
+
+**Feature 14: Download/Print Ticket**
+  - **Description:** Allows users to download or print tickets
+  - **Priority:** High
+  - **Inputs:** Booking reference
+  - **Processing:** Generate PDF/e-ticket
+  -**Outputs:** Downloadable or printable ticket
+  -**Error Handling:** Handle missing ticket data
+
+**Feature 15: Next Steps: Provide Information on Check-in Time**
+  - **Description:** Displays check-in details post-booking
+  - **Priority:** Medium
+  - **Inputs:** Flight details
+  - **Processing:** Retrieve and display check-in info
+  - **Outputs:** Check-in instructions
+  - **Error Handling:** Provide generic check-in details if unavailable
+
+**Feature 16: User Profile Page**
+  - **Description:** Allows users to manage their accounts
+  - **Priority:** Medium
+  - **Inputs:** User details
+  - **Processing:** Fetch and display profile data
+  - **Outputs:** Profile dashboard
+  - **Error Handling:** Handle missing profile data
+
+**Feature 17: Search Feature in Profile Page**
+  - **Description:** Enables users to search their past bookings
+  - **Priority:** Low
+  - **Inputs:** Search query
+  - **Processing:** Retrieve matching records
+  - **Outputs:** List of relevant results
+  - **Error Handling:** Handle no results found
+
+**Feature 18: Itinerary Details**
+  - **Description:** Shows the user’s travel itinerary
+  - **Priority:** High
+  - **Inputs:** Booking details
+  - **Processing:** Fetch and format itinerary
+  - **Outputs:** Display itinerary
+  - **Error Handling:** Handle missing or incorrect details
+
+**Feature 19: About Profile Page**
+  - **Description:** Provides an overview of profile functionalities
+  - **Priority:** Low
+  - **Inputs:** Static content
+  - **Processing:** Display profile page details
+  - **Outputs:** Informational text
+  - **Error Handling:** Ensure content is accessible
+
+**Feature 20: Upcoming Flights**
+  - **Description:** Displays a list of future flights
+  - **Priority:** High
+  - **Inputs:** User bookings
+  - **Processing:** Fetch upcoming flights
+  - **Outputs**: Display upcoming trips
+  - **Error Handling:** Handle cases of no upcoming flights
+
+ 
 
 ## 8. Non-Functional Requirements
 - **Performance**: Describe performance requirements.
@@ -230,6 +424,10 @@ Payment gateway integration for secure transactions
 
 ## 12. Appendices
 - **Supporting Information**: Add any additional information here.
-- **Revision History**: Record any changes made to the document with dates and descriptions.
+- **Revision History**: 
+  - 20 Feb 2025 - Added a template and partial content for the TSD
+  - 24 Feb 2025 - Added Visual Mockup Reference
+  - 27 Feb 2025 - Added the Functional Requirements and Data Requirements
+  - 28 Feb 2025 - Added Features and System Features
 
 
