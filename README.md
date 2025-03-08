@@ -4,11 +4,11 @@
 - **Project Name**: Airline Booking System
 - **Version**: 
 - **Date**: 
-- **Author(s)**:
-Joseph Ryan Caballero
-Grace Pontanar
-Iasaiah Alves
-Jerrelyn Del Pilar
+- **Author(s)**:    
+Joseph Ryan Caballero   
+Grace Pontanar   
+Iasaiah Alves   
+Jerrelyn Del Pilar   
 Lia Clemente
 
 ## 2. Table of Contents
@@ -74,147 +74,29 @@ Payment gateway integration for secure transactions
 - **Link or Screenshot**: https://www.figma.com/design/lOiGafupfytA7AWHaIiGZJ/MCP-Side-Project-(Airline-Booking-System))?node-id=73-2&p=f&t=tVXqkQW97sn8SgdE-0
 
 ## 6. Features
-- **Feature 1**: Responsive Navigation Bar
 
-```js function responsiveNavigationBar(screenWidth, userClickEvent) {
-    // Define breakpoints for different screen sizes
-    const desktopBreakpoint = 
-    const tabletBreakpoint = 
-    const mobileBreakpoint = 
-    // Check the screen width and adjust the navigation bar layout accordingly
-    if (screenWidth >= desktopBreakpoint) {
-        // Desktop layout
-        setDesktopLayout();
-    } else if (screenWidth >= tabletBreakpoint) {
-        // Tablet layout
-        setTabletLayout();
-    } else {
-        // Mobile layout
-        setMobileLayout();}
-    // Add event listeners for user interactions
-    addUserClickListeners(userClickEvent);
-    // Ensure fallback links in case of JavaScript failure
-    ensureFallbackLinks();}
-    function setDesktopLayout() {
-        // Set the navigation bar layout for desktop screens
-        showFullMenu();
-        hideHamburgerMenu();}
-    function setTabletLayout() {
-        // Set the navigation bar layout for tablet screens
-        showHamburgerMenu();
-        hideFullMenu();}
-    function setMobileLayout() {
-        // Set the navigation bar layout for mobile screens
-        showHamburgerMenu();
-        hideFullMenu();}
-    function showFullMenu() {
-        // Display the full navigation menu
-        let fullMenu = document.getElementById("fullMenu");
-        fullMenu.style.display = "block";}
-    function hideFullMenu() {
-        // Hide the full navigation menu
-        let fullMenu = document.getElementById("fullMenu");
-        fullMenu.style.display = "none";}
-    function showHamburgerMenu() {
-        // Display the hamburger menu
-        let hamburgerMenu = document.getElementById("hamburgerMenu");
-        hamburgerMenu.style.display = "block";}
-    function hideHamburgerMenu() {
-        // Hide the hamburger menu
-        let hamburgerMenu = document.getElementById("hamburgerMenu");
-        hamburgerMenu.style.display = "none";}
-    function addUserClickListeners(userClickEvent) {
-        // Add event listeners for user clicks/taps
-        let hamburgerMenu = document.getElementById("hamburgerMenu");
-        hamburgerMenu.addEventListener("click", toggleMenu);
-        // Handle other user click events if necessary
-        handleUserClicks(userClickEvent);}
-    function toggleMenu() {
-        // Toggle the visibility of the navigation menu
-        let fullMenu = document.getElementById("fullMenu");
-        if (fullMenu.style.display === "none") {
-            fullMenu.style.display = "block";
-        } else {
-            fullMenu.style.display = "none";
-        }}
-    function handleUserClicks(userClickEvent) {
-        // Process user clicks/taps on navigation links
-        let navLinks = document.querySelectorAll(".navLink");
-        navLinks.forEach(link => {
-            link.addEventListener("click", (event) => {
-                // Handle the click event and navigate to the corresponding page
-                navigateToPage(event.target.href);
-            });
-        });
-    }
-    function ensureFallbackLinks() {
-        // Ensure navigation links are accessible in case of JavaScript failure
-        let navLinks = document.querySelectorAll(".navLink");
-        navLinks.forEach(link => {
-            link.setAttribute("href", link.dataset.fallbackUrl);
-        });
-    }
-    function navigateToPage(url) {
-        // Navigate to the specified page
-        window.location.href = url;} 
-```
-
-- **Feature 2**: Flight Search
-
-```js function searchFlights(departureCity, destinationCity, departureDate, returnDate, numberOfPassengers) {
+- **Feature 1**: Flight Search
+```js 
+              function searchFlights(departureCity, destinationCity, departureDate, returnDate, numberOfPassengers, filters, selectedFlightsForComparison) {
               // Validate input parameters
               if (!departureCity || !destinationCity || !departureDate || numberOfPassengers <= 0) {
-              return "Invalid input parameters";
+                  return "Invalid input parameters";
               }
-              // Check if returnDate is provided for round-trip search
-              let isRoundTrip = returnDate ? true : false;
-              // Fetch available flights from the database or external API
-              let availableFlights = fetchFlights(departureCity, destinationCity, departureDate, isRoundTrip ? returnDate : null, numberOfPassengers);
-              // Check if any flights are available
-              if (availableFlights.length > 0) {
+              // Fetch available flights
+              let availableFlights = fetchFlights(departureCity, destinationCity, departureDate, returnDate, numberOfPassengers);
+              // Apply filters and sorting
+              let filteredFlights = applyFiltersAndSort(availableFlights, filters);
+              // Provide flight comparison if needed
+              if (selectedFlightsForComparison) {
+                  let comparisonTable = compareFlights(selectedFlightsForComparison);
+                  return comparisonTable;
+              }
               // Return the list of available flights
-              return availableFlights;
-              } else {
-              // Return a message indicating no flights are available
-              return "No flights available for the given criteria";
-              }
-              }
-              function fetchFlights(departureCity, destinationCity, departureDate, returnDate, numberOfPassengers) {
-              // This is a placeholder function to simulate fetching flights from a database or external API
-              let flights = [
-              {
-                flightNumber:
-                airline:
-                departureCity:
-                destinationCity: 
-                departureDate:
-                returnDate: 
-                numberOfSeatsAvailable: 
-              },
-              {
-                flightNumber:
-                airline: 
-                departureCity: 
-                destinationCity: 
-                departureDate:
-                returnDate:
-                numberOfSeatsAvailable: 
-              }
-              ];
-              // Filter flights based on input criteria
-              let filteredFlights = flights.filter(flight => {
-              return flight.departureCity === departureCity &&
-              flight.destinationCity === destinationCity &&
-              flight.departureDate === departureDate &&
-              (!returnDate || flight.returnDate === returnDate) &&
-              flight.numberOfSeatsAvailable >= numberOfPassengers;
-              });
               return filteredFlights;
-              }
+          }
   ```
 
-
-- **Feature 3**: User Authentication(Login/out)
+- **Feature 2**: User Authentication(Login/out)
 ```js
             function loginUser(email, password) {
             // Find the user by email
@@ -228,316 +110,279 @@ Payment gateway integration for secure transactions
             // Return an error message if credentials are invalid
             return "Invalid credentials";
             }
-            }
-```
-- **Feature 4**: Promotions and Offers
-```js
-          function displayPromotionsAndOffers(userPreferences, promotionalCampaigns) {
-              // Validate input parameters
-              if (!userPreferences || !promotionalCampaigns) {
-                  return "Invalid input parameters";
-              }
-              // Fetch applicable promotions based on user preferences
-              let applicablePromotions = fetchApplicablePromotions(userPreferences, promotionalCampaigns);
-              // Apply discount rules to the promotions
-              let discountedOffers = applyDiscountRules(applicablePromotions);
-              // Remove expired promotions
-              let validOffers = removeExpiredPromotions(discountedOffers);
-              // Display the available offers
-              displayOffers(validOffers);
-          }
-          function fetchApplicablePromotions(userPreferences, promotionalCampaigns) {
-              // This is a placeholder function to simulate fetching promotions based on user preferences
-              // In a real implementation, this function would query a promotions database or call an external promotions API
-              // Sample data structure for promotional campaigns
-              let promotions = [
-                  {
-                      promotionId: "PROMO1",
-                      description: "10% off on all flights",
-                      discount: 0.10,
-                      expiryDate: "2025-03-15",
-                      applicableTo: ["flights"]
-                  }
-              ];
-              // Filter promotions based on user preferences
-              let filteredPromotions = promotions.filter(promotion => {
-                  return userPreferences.includes(promotion.applicableTo[0]);
-              });
-              return filteredPromotions;
-          }
-          function applyDiscountRules(promotions) {
-              // Apply discount rules to the promotions
-              promotions.forEach(promotion => {
-                  // Apply discount logic if necessary
-                  promotion.finalPrice = calculateDiscountedPrice(promotion);
-              });
-              return promotions;
-          }
-          function calculateDiscountedPrice(promotion) {
-              // Placeholder function to calculate discounted price
-              // In a real implementation, this would calculate the discount based on the original price and discount rate
-              let originalPrice = 100; // Example original price
-              let finalPrice = originalPrice - (originalPrice * promotion.discount);
-              return finalPrice;
-          }
-          function removeExpiredPromotions(promotions) {
-              // Remove promotions that have expired
-              let currentDate = new Date("2025-02-28"); // Example current date
-              let validPromotions = promotions.filter(promotion => {
-                  return new Date(promotion.expiryDate) > currentDate;
-              });
-              return validPromotions;
-          }
-          function displayOffers(offers) {
-              // Display the available offers
-              offers.forEach(offer => {
-                  console.log(`Promotion: ${offer.description}, Final Price: ${offer.finalPrice}`);
-              });
           }
 ```
-- **Feature 5**: Popular Destinations or Top Flights
-```js
-        function displayPopularDestinationsOrTopFlights(flightPopularityData) {
-        // Validate input parameters
-          if (!flightPopularityData) {
-              // Fetch default popular destinations if data is unavailable
-              let defaultPopularDestinations = fetchDefaultPopularDestinations();
-              displayPopularFlights(defaultPopularDestinations);
-              return;
-          }
-          // Display the list of popular flights
-          displayPopularFlights();
-      }
-      function fetchDefaultPopularDestinations() {
-          // This is a placeholder function to simulate fetching default popular destinations
-          // Sample data structure for default popular destinations
-          let defaultDestinations = [
-                  { destination: },
-                  { destination: },
-                  { destination: }
-          ];
-          return defaultDestinations;
-      }
-      function displayPopularFlights(destinations) {
-          // Display the list of popular flights
-          destinations.forEach(destination => {
-              console.log(`Destination: ${destination.destination}`);
-          });
-      }
-```
-- **Feature 6**: Flight Search Results
-- **Feature 7**: Display details and Prices on Flight Results
-- **Feature 8**: Filters and Sorting Options
-- **Feature 9**: Flight Comparison
-- **Feature 10**: Booking Confirmation
-- **Feature 11**: Footer and Contact details
-- **Feature 12**: Summary of the Booking
-- **Feature 13**: Payment Information
-- **Feature 14**: Download/Print Ticket
-- **Feature 15**: Next Steps: Provide information on check-in time
-- **Feature 16**: User Profile Page
-- **Feature 17**: Search Feature in Profile Page
-- **Feature 18**: Itinerary Details
-- **Feature 19**: About Profile Page
-- **Feature 20**: Upcoming Flights
 
+- **Feature 3**: Booking and Payment Processing
+```js
+          function bookAndPay(userBookingDetails, paymentDetails) {
+          // Store booking details
+          let booking = storeBookingDetails(userBookingDetails);
+          // Process payment
+          let paymentStatus = processPayment(paymentDetails);
+          if (paymentStatus.success) {
+              // Generate booking confirmation
+              let confirmation = generateBookingConfirmation(booking);
+              return confirmation;
+          } else {
+              // Handle payment failure
+              return "Payment failed. Please try again.";
+          }
+      }
+
+```
+
+- **Feature 4**: Flight Search Results and Details
+```js
+        function displayFlightSearchResults(searchQuery) {
+        // Fetch search results
+        let searchResults = fetchSearchResults(searchQuery);
+        // Retrieve and display flight details
+        let detailedResults = searchResults.map(result => getFlightDetails(result));
+        // Display booking summary
+        let bookingSummary = generateBookingSummary(detailedResults);
+        return { detailedResults, bookingSummary };
+    }
+```
+
+- **Feature 5**: Download/Print Ticket and Itinerary Details
+```js
+        function downloadOrPrintTicket(bookingReference) {
+        // Generate PDF/e-ticket
+        let ticket = generateTicketPDF(bookingReference);
+        // Fetch itinerary details
+        let itinerary = fetchItineraryDetails(bookingReference);
+        // Display upcoming trips
+        let upcomingTrips = fetchUpcomingFlights(bookingReference);
+        return { ticket, itinerary, upcomingTrips };
+    }   
+```
+
+- **Feature 6**: Promotions, Offers, and Popular Destinations
+```js
+      function displayPromotionsAndPopularDestinations(userPreferences, promotionalCampaigns, flightPopularityData) {
+      // Fetch and apply discount rules
+      let applicablePromotions = fetchApplicablePromotions(userPreferences, promotionalCampaigns);
+      let validPromotions = applyDiscountRules(applicablePromotions);
+      // Remove expired promotions
+      let finalPromotions = removeExpiredPromotions(validPromotions);
+      // Analyze and rank popular destinations
+      let popularDestinations = analyzeAndRankDestinations(flightPopularityData);
+      return { finalPromotions, popularDestinations };
+  }
+```
 
 ## 7. Functional Requirements
+
 ### Use Cases
 - **Use Case 1**:
-  - **Title**: Booking a Flight
-  - **Description**: This use case describes how a passenger books a flight through the airline booking system. The passenger selects a flight, enters personal details, makes a payment, and receives a booking confirmation.
+  - **Title**: Flight Search
+  - **Description**: Allow the user to search for flights by providing origin, destination, and travel dates, with options to filter and sort results, and compare different flights.
+
   - **Actors**: 
-    - Primary Actor: Passenger
-    - Secondary Actors: Airline System, Payment Gateway
+    - Primary Actor: Passenger / User
+    - Secondary Actors: Flight Database, External API
+
   - **Preconditions**:
-    - The passenger has access to the airline booking system (website or mobile app).
-    - The airline has available flights listed in the system.
-    - The passenger has a valid payment method. 
+    - User is presented with a list of available flights based on the search criteria.
+
   - **Postconditions**: 
-    - The passenger successfully books a flight and receives a confirmation.
-    - The airline system updates seat availability.
-    - The payment is successfully processed.
+    - User is presented with a list of available flights based on the search criteria.
+
   - **Main Flow**: 
-    - The passenger logs into the airline booking system.
-    - The passenger enters travel details (departure and destination, date, number of passengers).
-    - The system displays available flights based on the entered criteria.
-    - The passenger selects a preferred flight.
-    - The passenger provides personal details (name, passport number, contact information).
-    - The passenger selects a payment method and enters payment details.
-    - The system processes the payment through the payment gateway.
-    - Upon successful payment, the system generates a booking confirmation with ticket details.
-    - The system displays the booking confirmation.
+    1. User navigates to the flight search page.
+    2. User enters the departure city, destination city, departure date, return date (if applicable), and number of passengers.
+    3. User applies filters (e.g., airline, price range, duration).
+    4. System validates the input and queries the flight database or external API.
+    5. System displays the list of available flights.
+    6. User selects flights for comparison.
+    7. System displays a side-by-side comparison of the selected flights.
+
   - **Alternate Flows**: 
-    - **No Flights Available**
-      - If no flights match the search criteria, the system displays a message and suggests alternative dates or destinations.
-    - **Payment Fails**
-      - If the payment fails, the system notifies the passenger and provides an option to retry with a different payment method.
-    - **Session Timeout**
-      - If the passenger takes too long to complete the booking, the session expires, and the system prompts them to restart the process.
+    - **Invalid Input**
+      - System displays an error message prompting the user to correct the input.
+
+    - **No Available Flights**
+      - System displays a message indicating no flights are available for the given criteria.
+
+- **Use Case 2**:
+  - **Title**: Authentication
+  - **Description**: Allow the user to create an account and securely log in to access the system.
+  - **Actors**: 
+    - Primary Actor: Passenger / User
+    - Secondary Actors: Authentication Server, Database
+  - **Preconditions**:
+    - User has accessed the registration or login page.
+  - **Postconditions**: 
+    - User is successfully registered or logged in and granted access to the system.
+  - **Main Flow**: 
+    1. User navigates to the registration or login page.   
+    2. If a new user, they fill out the registration form and submit it.
+    3. System validates the input and stores the data securely.   
+    4. If an existing user, they enter their credentials and submit the login form.   
+    5. System verifies the credentials against the stored data.   
+    6. Upon successful authentication, the user is granted access to their dashboard.
+  - **Alternate Flows**: 
+    - **Invalid Credentials**
+      - System displays an error message prompting the user to re-enter their credentials.
+    - **Forgot Password**
+      - User clicks "Forgot Password" and receives a link via email to reset their password.
+
+- **Use Case 3**:
+  - **Title**: Booking and Payment Processing
+  - **Description**: Enable the user to book flights, process payments securely, and receive booking confirmation.
+  - **Actors**: 
+    - Primary Actor: Passenger / User
+    - Secondary Actors: Payment Gateway, Booking Database
+
+  - **Preconditions**:
+    - User has selected a flight to book.
+
+  - **Postconditions**: 
+    - User successfully books the flight and receives a confirmation.
+
+  - **Main Flow**: 
+    1. User selects a flight and proceeds to booking.   
+    2. User enters personal details and payment information.
+    3. System processes the payment through the payment gateway.   
+    4. Upon successful payment, system stores the booking details in the database.  
+    5. System generates a booking confirmation.   
+    6. User receives the booking confirmation.
+
+  - **Alternate Flows**: 
+    - **Payment Failure**
+      - System displays an error message and prompts the user to retry with different payment details.
+
+
+- **Use Case 4**:
+  - **Title**: Flight Search Results and Details
+  - **Description**: Display flight results after a user searches, with detailed information on flight options, including price and booking summary before finalizing booking.
+  - **Actors**: 
+    - Primary Actor: Passenger / User
+    - Secondary Actors: Flight Database, External API
+
+  - **Preconditions**:
+    - User has performed a flight search.
+
+  - **Postconditions**: 
+    - User is presented with detailed flight options and booking summary.
+
+  - **Main Flow**: 
+    1. User performs a flight search.  
+    2. System fetches search results from the flight database or external API.
+    3. System retrieves detailed information on each flight option.   
+    4. System displays the list of matching flights with detailed information, including price. 
+    5. User selects a flight to book.  
+    6. System generates a booking summary.
+
+  - **Alternate Flows**: 
+    - **No Available Flights**
+      - System displays a message indicating no flights are available for the given criteria.
+    - **Missing Pricing Data**
+      - System handles missing or incorrect pricing data and displays an error message.
+
+- **Use Case 5**:
+  - **Title**: Download/Print Ticket and Itinerary Details
+  - **Description**: Allow the user to download or print tickets and view itinerary details, including upcoming flights.
+  - **Actors**: 
+    - Primary Actor: Passenger / User
+    - Secondary Actors: Booking Database, Ticket Generation Service
+
+  - **Preconditions**:
+    - User has a confirmed booking.
+
+  - **Postconditions**: 
+    - User successfully downloads or prints the ticket and views itinerary details.
+
+  - **Main Flow**: 
+    1. User navigates to the booking details page. 
+    2. User selects the option to download or print the ticket.
+    3. System generates a PDF/e-ticket.  
+    4. User downloads or prints the ticket.  
+    5. User views itinerary details, including upcoming flights.  
+ 
+  - **Alternate Flows**: 
+    - **Missing Ticket Data***
+      - System handles missing ticket data and displays an error message.
+
+- **Use Case 6**:
+  - **Title**: Promotions, Offers, and Popular Destinations
+  - **Description**: Display discounts, special deals, and offers based on user preferences, and show trending flight routes and destinations.
+  - **Actors**: 
+    - Primary Actor: Passenger / User
+    - Secondary Actors: Promotions Database, Flight Popularity Data Source
+
+  - **Preconditions**:
+    - User has accessed the promotions or popular destinations page.
+
+  - **Postconditions**: 
+    - User is presented with applicable promotions and popular destinations.
+
+  - **Main Flow**: 
+    1. User navigates to the promotions or popular destinations page.  
+    2. System fetches applicable promotions based on user preferences.
+    3. System applies discount rules and removes expired promotions. 
+    4. System displays valid promotions to the user.  
+    5. System analyzes and ranks popular destinations.   
+    6. System displays the list of popular flights and destinations.
+
+  - **Alternate Flows**: 
+    - **No Promotions Available**
+      - System displays a message indicating no promotions are available.
+    - **Data Unavailable**
+      - System displays default popular destinations if data is unavailable.
+
 
 ### System Features
-**Feature 1: Responsive Navigation Bar**
-  - **Description:** A top navigation bar that adjusts to different screen sizes and provides quick access to essential pages.
-  - **Priority:** High
-  - **Inputs:** User clicks/taps, screen resolution
-  - **Processing:** Detects screen size and adjusts layout accordingly
-  - **Outputs:** Visible navigation bar with accessible links
-  - **Error Handling:** Ensure fallback links in case of JavaScript failure
 
-**Feature 2: Flight Search**
-  - **Description:** Allows users to search for flights by providing origin, destination, and travel dates.
+**Feature 1: Flight Search**
+  - **Description:** Allows users to search for flights by providing origin, destination, and travel dates, with options to filter and sort results, and compare different flights.
   - **Priority:** High
-  - **Inputs:** Departure city, destination city, departure date, return date (if applicable), number of passengers
-  - **Processing:** Validates input, queries flight database, applies filters
-  - **Outputs:** List of available flights
-  - **Error Handling:** Display messages for invalid inputs or no available flights
+  - **Inputs:** Departure city, destination city, departure date, return date (if applicable), number of passengers, filters (airline, price range, duration), selected flights for comparison
+  - **Processing:** Validates input, queries flight database, applies filters, sorts results, displays side-by-side comparison
+  - **Outputs:** List of available flights, comparison table
+  - **Error Handling:** Display messages for invalid inputs or no available flights, ensure proper filter application, handle incomplete comparisons
 
-**Feature 3: User Authentication (Login/Logout)**
-  - **Description:** Secure login/logout functionality to access user-specific details
+**Feature 2: User Authentication (Login/Logout)**
+  - **Description:** Secure login/logout functionality to access user-specific details and manage user profiles.
   - **Priority:** High
   - **Inputs:** Email/username, password
-  - **Processing:** Validate credentials, authenticate user
-  - **Outputs:** Successful login session or error message
+  - **Processing:** Validate credentials, authenticate user, manage user profile details
+  - **Outputs:** Successful login session or error message, profile dashboard
   - **Error Handling:** Incorrect credentials, forgot password option
 
-**Feature 4:** Promotions and Offers
-  - **Description:** Displays discounts, special deals, and offers
+**Feature 3: Booking and Payment Processing**
+  - **Description:** Enables users to book flights, process payments securely, and receive booking confirmation.
+  - **Priority:** High
+  - **Inputs:** User booking details, payment details (card number, CVV, expiration)
+  - **Processing:** Store booking, generate confirmation, process payment through a secure gateway
+  - **Outputs:** Confirmation message, payment success/failure notification
+  - **Error Handling:** Handle payment or booking failures, handle invalid payments securely
+
+**Feature 4: Flight Search Results and Details** 
+  - **Description:** Displays flight results after a user searches, with detailed information on flight options, including price and booking summary before finalizing booking.
+  - **Priority:** High
+  - **Inputs:** Search query from flight search feature, selected flight details
+  - **Processing:** Fetch and filter available flights, retrieve and display price and details, fetch and format booking summary
+  - **Outputs:** List of matching flights, flight details including fare, booking summary display
+  - **Error Handling:** Handle cases of no available flights, handle missing or incorrect pricing data, validate all details before proceeding
+
+**Feature 5: Download/Print Ticket and Itinerary Details**
+  - **Description:** Allows users to download or print tickets and view itinerary details, including upcoming flights.
+  - **Priority:** High
+  - **Inputs:** Booking reference, user bookings
+  - **Processing:** Generate PDF/e-ticket, fetch and format itinerary, fetch upcoming flights
+  - **Outputs:** Downloadable or printable ticket, display itinerary, display upcoming trips
+  - **Error Handling:** Handle missing ticket data, handle missing or incorrect details, handle cases of no upcoming flights
+
+**Feature 6: Promotions, Offers, and Popular Destinations**
+  - **Description:** Displays discounts, special deals, and offers based on user preferences, and shows trending flight routes and destinations.
   - **Priority:** Medium
-  - **Inputs:** User preferences, promotional campaigns
-  - **Processing:** Fetch and apply discount rules
-  - **Outputs:** Display available offers
-  - **Error Handling:** Ensure expired promotions are removed
+  - **Inputs:** User preferences, promotional campaigns, flight popularity data
+  - **Processing:** Fetch and apply discount rules, remove expired promotions, analyze and rank destinations
+  - **Outputs:** Display available offers, list of popular flights
+  - **Error Handling:** Ensure expired promotions are removed, display default popular destinations if data is unavailable
 
-**Feature 5: Popular Destinations or Top Flights**
-  - **Description:** Shows trending flight routes and destinations
-  - **Priority:** Medium
-  - **Inputs:** Flight popularity data
-  - **Processing:** Analyze and rank destinations
-  - **Outputs:** List of popular flights
-  - **Error Handling:** Display default popular destinations if data is unavailable
-
-**Feature 6: Flight Search Results**
-  - **Description:** Displays flight results after a user searches
-  - **Priority:** High
-  - **Inputs:** Search query from flight search feature
-  - **Processing:** Fetch and filter available flights
-  - **Outputs:** List of matching flights
-  - **Error Handling:** Handle cases of no available flights
-
-**Feature 7: Display Details and Prices on Flight Results**
-  - **Description:** Provides detailed information on flight options, including price
-  - **Priority:** High
-  - **Inputs:** Selected flight details
-  - **Processing:** Retrieve and display price and details
-  - **Outputs:** Flight details including fare
-  - **Error Handling:** Handle missing or incorrect pricing data
-
-**Feature 8: Filters and Sorting Options**
-  - **Description:** Allows users to refine search results
-  - **Priority:** Medium
-  - **Inputs:** User-selected filters (airline, price range, duration)
-  - **Processing:** Apply filters and sort results
-  - **Outputs:** Updated flight list
-  - **Error Handling:** Ensure proper filter application
-
-**Feature 9: Flight Comparison**
-  - **Description:** Enables users to compare different flights
-  - **Priority:** Medium
-  - **Inputs:** Selected flights
-  - **Processing:** Display side-by-side comparison
-  - **Outputs:** Comparison table
-  - **Error Handling:** Handle incomplete comparisons
-
-**Feature 10: Booking Confirmation**
-  - **Description:** Confirms successful booking
-  - **Priority:** High
-  - **Inputs:** User booking details
-  - **Processing:** Store booking and generate confirmation
-  - **Outputs:** Confirmation message
-  - **Error Handling:** Handle payment or booking failures
-
-**Feature 11: Footer and Contact Details**
-  - **Description:** Provides contact information and quick links
-  - **Priority:** Low
-  - **Inputs:** Static content
-  - **Processing:** Display footer content
-  - **Outputs:** Visible footer
-  - **Error Handling:** Ensure all links are functional
-
-**Feature 12: Summary of the Booking**
-  - **Description:** Displays a summary before finalizing booking
-  - **Priority:** High
-  - **Inputs:** Flight and passenger details
-  - **Processing:** Fetch and format booking summary
-  - **Outputs:** Booking summary display
-  - **Error Handling:** Validate all details before proceeding
-
-**Feature 13: Payment Information**
-  - **Description:** Allows secure payment processing
-  - **Priority:** High
-  - **Inputs:** Payment details (card number, CVV, expiration)
-  - **Processing:** Process payment through a secure gateway
-  - **Outputs:** Payment success/failure notification
-  - **Error Handling:** Handle invalid payments securely
-
-**Feature 14: Download/Print Ticket**
-  - **Description:** Allows users to download or print tickets
-  - **Priority:** High
-  - **Inputs:** Booking reference
-  - **Processing:** Generate PDF/e-ticket
-  -**Outputs:** Downloadable or printable ticket
-  -**Error Handling:** Handle missing ticket data
-
-**Feature 15: Next Steps: Provide Information on Check-in Time**
-  - **Description:** Displays check-in details post-booking
-  - **Priority:** Medium
-  - **Inputs:** Flight details
-  - **Processing:** Retrieve and display check-in info
-  - **Outputs:** Check-in instructions
-  - **Error Handling:** Provide generic check-in details if unavailable
-
-**Feature 16: User Profile Page**
-  - **Description:** Allows users to manage their accounts
-  - **Priority:** Medium
-  - **Inputs:** User details
-  - **Processing:** Fetch and display profile data
-  - **Outputs:** Profile dashboard
-  - **Error Handling:** Handle missing profile data
-
-**Feature 17: Search Feature in Profile Page**
-  - **Description:** Enables users to search their past bookings
-  - **Priority:** Low
-  - **Inputs:** Search query
-  - **Processing:** Retrieve matching records
-  - **Outputs:** List of relevant results
-  - **Error Handling:** Handle no results found
-
-**Feature 18: Itinerary Details**
-  - **Description:** Shows the user’s travel itinerary
-  - **Priority:** High
-  - **Inputs:** Booking details
-  - **Processing:** Fetch and format itinerary
-  - **Outputs:** Display itinerary
-  - **Error Handling:** Handle missing or incorrect details
-
-**Feature 19: About Profile Page**
-  - **Description:** Provides an overview of profile functionalities
-  - **Priority:** Low
-  - **Inputs:** Static content
-  - **Processing:** Display profile page details
-  - **Outputs:** Informational text
-  - **Error Handling:** Ensure content is accessible
-
-**Feature 20: Upcoming Flights**
-  - **Description:** Displays a list of future flights
-  - **Priority:** High
-  - **Inputs:** User bookings
-  - **Processing:** Fetch upcoming flights
-  - **Outputs**: Display upcoming trips
-  - **Error Handling:** Handle cases of no upcoming flights
-
- 
 
 ## 8. Non-Functional Requirements
 - **Performance**: Describe performance requirements.
@@ -680,5 +525,6 @@ Payment gateway integration for secure transactions
   - 24 Feb 2025 - Added Visual Mockup Reference
   - 27 Feb 2025 - Added the Functional Requirements and Data Requirements
   - 28 Feb 2025 - Added Features and System Features
+  - 08 Mar 2025 - Revision with the Techinical Specifications Document narrowing the features down to 6 key features for the Airline Booking System.   
 
 
