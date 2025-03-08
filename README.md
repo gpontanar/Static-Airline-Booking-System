@@ -175,7 +175,7 @@ Payment gateway integration for secure transactions
 ## 7. Functional Requirements
 
 ### Use Cases
-- **Use Case 1**:
+**Use Case 1**:
   - **Title**: Flight Search
   - **Description**: Allow the user to search for flights by providing origin, destination, and travel dates, with options to filter and sort results, and compare different flights.
 
@@ -205,7 +205,7 @@ Payment gateway integration for secure transactions
     - **No Available Flights**
       - System displays a message indicating no flights are available for the given criteria.
 
-- **Use Case 2**:
+**Use Case 2**:
   - **Title**: Authentication
   - **Description**: Allow the user to create an account and securely log in to access the system.
   - **Actors**: 
@@ -228,7 +228,7 @@ Payment gateway integration for secure transactions
     - **Forgot Password**
       - User clicks "Forgot Password" and receives a link via email to reset their password.
 
-- **Use Case 3**:
+**Use Case 3**:
   - **Title**: Booking and Payment Processing
   - **Description**: Enable the user to book flights, process payments securely, and receive booking confirmation.
   - **Actors**: 
@@ -254,7 +254,7 @@ Payment gateway integration for secure transactions
       - System displays an error message and prompts the user to retry with different payment details.
 
 
-- **Use Case 4**:
+**Use Case 4**:
   - **Title**: Flight Search Results and Details
   - **Description**: Display flight results after a user searches, with detailed information on flight options, including price and booking summary before finalizing booking.
   - **Actors**: 
@@ -281,7 +281,7 @@ Payment gateway integration for secure transactions
     - **Missing Pricing Data**
       - System handles missing or incorrect pricing data and displays an error message.
 
-- **Use Case 5**:
+**Use Case 5**:
   - **Title**: Download/Print Ticket and Itinerary Details
   - **Description**: Allow the user to download or print tickets and view itinerary details, including upcoming flights.
   - **Actors**: 
@@ -305,7 +305,7 @@ Payment gateway integration for secure transactions
     - **Missing Ticket Data***
       - System handles missing ticket data and displays an error message.
 
-- **Use Case 6**:
+**Use Case 6**:
   - **Title**: Promotions, Offers, and Popular Destinations
   - **Description**: Display discounts, special deals, and offers based on user preferences, and show trending flight routes and destinations.
   - **Actors**: 
