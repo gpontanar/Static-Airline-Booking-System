@@ -521,10 +521,20 @@ Payment gateway integration for secure transactions
 ## 12. Appendices
 - **Supporting Information**: Add any additional information here.
 - **Revision History**: 
-  - 20 Feb 2025 - Added a template and partial content for the TSD
-  - 24 Feb 2025 - Added Visual Mockup Reference
-  - 27 Feb 2025 - Added the Functional Requirements and Data Requirements
-  - 28 Feb 2025 - Added Features and System Features
-  - 08 Mar 2025 - Revision with the Techinical Specifications Document narrowing the features down to 6 key features for the Airline Booking System.   
+  - 20 Feb 2025:   
+        - Added a template and partial content for the TSD
+
+  - 24 Feb 2025:   
+        - Added Visual Mockup Reference
+
+  - 27 Feb 2025:   
+        - Added the Functional Requirements and Data Requirements
+
+  - 28 Feb 2025:   
+        - Added Features and System Features
+
+  - 08 Mar 2025:   
+        - Revision with the Techinical Specifications Document narrowing the features down to 6 key features for the Airline Booking System.   
+        - Revisions with layout and designs in Figma
 
 
