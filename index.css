@@ -11,7 +11,6 @@ body {
 }
 
 .navbar {
-    /* background-color: var(--navy-blue); */
     background-color: var(--navy-blue);
     padding: 15px 0;
 }
@@ -207,7 +206,8 @@ body {
 
 .destination-card {
     position: relative;
-    height: 300px;
+    /* height: 300px; */
+    height: 700px;
     border-radius: 10px;
     overflow: hidden;
     margin-bottom: 30px;
@@ -255,11 +255,15 @@ body {
 .flight-deals {
     padding: 50px 10%;
     background-color: #f8f9fa;
+    background-image: url('images/sky-1.jpg');
+    background-size: cover;
+    background-position: center;
 }
 
 .deal-card {
     position: relative;
-    height: 250px;
+    /* height: 250px; */
+    height: 700px;
     border-radius: 10px;
     overflow: hidden;
     margin-bottom: 30px;
@@ -329,6 +333,8 @@ footer {
 .social-icons {
     display: flex;
     gap: 15px;
+    justify-content: flex-end;
+
 }
 
 .social-icons a {
@@ -339,6 +345,11 @@ footer {
 
 .social-icons a:hover {
     color: #ddd;
+}
+#socials{
+    text-align: end;
+    display: flex-end; 
+    justify-content: flex-end;
 }
 
 .copyright {
@@ -402,5 +413,59 @@ footer {
     
     .destination-card, .deal-card {
         height: 250px;
+        
     }
+    #socials {
+        text-align: center;
+        justify-content: center;
+    }
+    .social-icons {
+        justify-content: center;
+    }
+    
 }
+
+/* Cards Hover effect - visible overlay text*/
+.deal-card:hover, .destination-card:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+}
+
+
+/* Hover effect the image to display the overlay */
+ .deal-card{
+    position: relative;
+    height: 700px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 30px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.deal-card img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.deal-overlay{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background-color: var(--light-red);
+    color: white;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.deal-card:hover .deal-overlay{
+    opacity: 1;
+}
+
+.deal-card:hover {
+    transform: scale(1.05);
+}  
+
+/* end */

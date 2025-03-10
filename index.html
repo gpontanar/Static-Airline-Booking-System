@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mabuhay Airways - Turning Travel Dreams into Destinations</title>
+    <title>Mabuhay Airline - Turning Travel Dreams into Destinations</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
@@ -11,11 +11,11 @@
 </head>
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg">
+    <nav class="navbar navbar-expand-lg" id="home-top">
         <div class="container">
-            <a class="navbar-brand d-flex align-items-center" href="#">
+            <a class="navbar-brand d-flex align-items-center" href="#home-top">
                 <img src="images/Ph-logo.png" alt="Mabuhay Airways Logo">
-                <span class="text-white ms-2">Mabuhay Airways</span>
+                <span class="text-white ms-2">Mabuhay Airline</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -23,13 +23,13 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Home</a>
+                        <a class="nav-link" href="#home-top">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Flights</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Explore</a>
+                        <a class="nav-link" href="#popular-destinations">Explore</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Contact Us</a>
@@ -43,7 +43,7 @@
     <!-- Hero Section -->
     <section class="hero-section">
         <div class="hero-content">
-            <h1>Mabuhay Airways</h1>
+            <h1>Mabuhay Airline</h1>
             <p>Turning Travel Dreams into Destinations</p>
         </div>
     </section>
@@ -128,7 +128,7 @@
     </section>
 
     <!-- Popular Destinations -->
-    <section class="popular-destinations">
+    <section class="popular-destinations" id="popular-destinations">
         <h2 class="section-title">Explore the Mabuhay Popular Destinations</h2>
         <div class="row">
             <div class="col-md-4">
@@ -166,34 +166,34 @@
             </div>
             <div class="col-md-4">
                 <div class="destination-card">
-                    <img src="images/boracay.jpg" alt="Boracay">
+                    <img src="images/palawan-1.jpg" alt="Palawan">
                     <div class="destination-overlay">
                         <h4>PALAWAN</h4>
                         <p>One of the most beautiful beaches in the world with pristine white sand and crystal clear waters.</p>
                         <button class="btn btn-primary">Book Now</button>
-                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#boracayModal">Show More</button>
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#palawanModal">Show More</button>
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="destination-card">
-                    <img src="images/cebu.jpg" alt="Cebu">
+                    <img src="images/bohol-5.jpg" alt="Bohol">
                     <div class="destination-overlay">
                         <h4>BOHOL</h4>
-                        <p>A vibrant city with rich history, beautiful beaches and amazing diving spots for adventure seekers.</p>
+                        <p>Bohol is known for coral reefs and unusual geological formations, notably the Chocolate Hills..</p>
                         <button class="btn btn-primary">Book Now</button>
-                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#cebuModal">Show More</button>
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#boholModal">Show More</button>
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="destination-card">
-                    <img src="images/baguio.jpg" alt="Baguio City">
+                    <img src="images/siargao-1.jpg" alt="Siargao Island">
                     <div class="destination-overlay">
                         <h4>SIARGAO</h4>
-                        <p>The summer capital of the Philippines with cool climate, pine trees and strawberry farms.</p>
+                        <p>Known as the “Surfing Capital of the Philippines”, Siargao is mainly responsible for introducing surfing to the country.</p>
                         <button class="btn btn-primary">Book Now</button>
-                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#baguioModal">Show More</button>
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#siargaoModal">Show More</button>
                     </div>
                 </div>
             </div>
@@ -206,40 +206,40 @@
         <div class="row">
             <div class="col-md-6 col-lg-3">
                 <div class="deal-card">
-                    <img src="images/deal1.jpg" alt="Flight Deal 1">
+                    <img src="images/FL-1.png" alt="Flight Deal 1">
                     <div class="deal-overlay">
                         <h5>MABUHAY AIRLINES</h5>
-                        <p>Book now and Get 50% Off on all Flights From Manila to Cebu</p>
+                        <p>Book now and Get 50% Off on all Flights From Manila to Cebu. Promo runs from March 1 - March 30, 2025.</p>
                         <button class="btn btn-primary">Book Now</button>
                     </div>
                 </div>
             </div>
             <div class="col-md-6 col-lg-3">
                 <div class="deal-card">
-                    <img src="images/deal2.jpg" alt="Flight Deal 2">
+                    <img src="images/FL-2.png" alt="Flight Deal 2">
                     <div class="deal-overlay">
                         <h5>FLIGHT PROMO SALE 2025</h5>
-                        <p>Don't miss the PISO Fare Promo Running NOW until February 28 to all domestic destinations</p>
+                        <p>Don't miss the PISO Fare Promo Running NOW until March 30 to all domestic destinations</p>
                         <button class="btn btn-primary">Book Now</button>
                     </div>
                 </div>
             </div>
             <div class="col-md-6 col-lg-3">
                 <div class="deal-card">
-                    <img src="images/deal3.jpg" alt="Flight Deal 3">
+                    <img src="images/FL-3.png" alt="Flight Deal 3">
                     <div class="deal-overlay">
                         <h5>WEEKEND GETAWAY</h5>
-                        <p>Book weekend flights with 30% discount for all destinations</p>
+                        <p>Book weekend flights with 30% discount for all destinations. Promo runs from March 1 - March 30, 2025.</p>
                         <button class="btn btn-primary">Book Now</button>
                     </div>
                 </div>
             </div>
             <div class="col-md-6 col-lg-3">
                 <div class="deal-card">
-                    <img src="images/deal4.jpg" alt="Flight Deal 4">
+                    <img src="images/FL-4.png" alt="Flight Deal 4">
                     <div class="deal-overlay">
                         <h5>FAMILY PACKAGE</h5>
-                        <p>Travel with your family and get special discounts for children and seniors</p>
+                        <p>Travel with your family and get special discounts for children and seniors. Promo runs from March 1 - March 30, 2025.</p>
                         <button class="btn btn-primary">Book Now</button>
                     </div>
                 </div>
@@ -252,34 +252,13 @@
         <div class="row">
             <div class="col-md-3">
                 <div class="footer-logo">
-                    <img src="images/logo.png" alt="Mabuhay Airways Logo">
-                    <p>Fly with style and comfort</p>
+                    <img src="images/Ph-logo.png" alt="Mabuhay Airways Logo">
+                    <span class="text-white ms-2">Mabuhay Airline</span>
+                    <p>Turning Travel Dreams into Destinations</p>
                 </div>
             </div>
-            <div class="col-md-3">
-                <div class="footer-links">
-                    <h5>Helpful Links</h5>
-                    <ul>
-                        <li><a href="#">FAQs</a></li>
-                        <li><a href="#">Baggage Info</a></li>
-                        <li><a href="#">Check-In</a></li>
-                        <li><a href="#">Flight Status</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="footer-links">
-                    <h5>Legal</h5>
-                    <ul>
-                        <li><a href="#">Terms & Conditions</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Cookie Policy</a></li>
-                        <li><a href="#">Passenger Rights</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="footer-links">
+            <div class="col-md-8">
+                <div class="footer-links" id="socials" >
                     <h5>Connect</h5>
                     <div class="social-icons">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -290,8 +269,57 @@
                 </div>
             </div>
         </div>
-        <div class="copyright">
-            <p>© 2025 Mabuhay Airways. All rights reserved.</p>
+        </div>
+        <div class="copyright"> 
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="footer-links">
+                        <h5>Company</h5>
+                        <ul>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Meet the Team</a></li>
+                            <li><a href="#">History</a></li>
+                            <li><a href="#">Careers</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="footer-links">
+                        <h5>Helpful Links</h5>
+                        <ul>
+                            <li><a href="#">FAQs</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">Live Chat</a></li>
+                            <li><a href="#">Flight Status</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="footer-links">
+                        <h5>Legal</h5>
+                        <ul>
+                            <li><a href="#">Terms & Conditions</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Cookie Policy</a></li>
+                            <li><a href="#">Passenger Rights</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="footer-links">
+                        <h5>Others</h5>
+                        <ul>
+                            <li><a href="#">News and Events</a></li>
+                            <li><a href="#">Airport Shuttle Service</a></li>
+                            <li><a href="#">Gift Cards</a></li>
+                            <li><a href="#">Luggage Info</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div> 
+            <div class="copyright"> 
+                <p>© 2025 Mabuhay Airways. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 
@@ -437,7 +465,7 @@
         </div>
     </div>
 
-    <!-- Palawan Modal TO BE CONTINUED -->
+    <!-- Palawan Modal -->
     <div class="modal fade destination-modal" id="palawanModal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
@@ -446,35 +474,129 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <div id="boracayCarousel" class="carousel slide destination-carousel" data-bs-ride="carousel">
+                    <div id="palawanCarousel" class="carousel slide destination-carousel" data-bs-ride="carousel">
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img src="images/Bora-2.jpg" class="d-block w-100" alt="Boracay Beach">
+                                <img src="images/palawan-2.jpg" class="d-block w-100" alt="Palawan Beach">
                                 <div class="carousel-caption">
-                                    <h5>White Beach</h5>
-                                    <p>The famous 4km stretch of powdery white sand beach.</p>
+                                    <h5>El Nido Marine Reserve Park</h5>
+                                    <p>El Nido Marine Reserve Park is popular for its limestone cliffs and an abundant fauna and flora including endemic species.</p>
                                 </div>
                             </div>
                             <div class="carousel-item">
-                                <img src="images/Bora-4.jpg" class="d-block w-100" alt="Boracay Activities">
+                                <img src="images/palawan-3.jpg" class="d-block w-100" alt="Palawan Lake">
                                 <div class="carousel-caption">
-                                    <h5>Water Activities</h5>
-                                    <p>Enjoy parasailing, diving, and island hopping.</p>
+                                    <h5>Barracuda Lake</h5>
+                                    <p>Barracuda Lake is a spectacular site with emerald-green brackish waters surrounded by an impressive limestone karst formation. </p>
                                 </div>
                             </div>
                             <div class="carousel-item">
-                                <img src="images/Bora-5.jpg" class="d-block w-100" alt="Boracay Sunset">
+                                <img src="images/palawan-5.jpg" class="d-block w-100" alt="El Nido Beach">
                                 <div class="carousel-caption">
-                                    <h5>Breathtaking Sunsets</h5>
-                                    <p>Experience magical sunset views every evening.</p>
+                                    <h5>El Nido</h5>
+                                    <p>Famous for its white sand beaches, turquoise waters, coral reefs, and splendid limestone rock formations. Understandably, El Nido is one of most popular resort destinations in the Philippines.</p>
                                 </div>
                             </div>
                         </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#boracayCarousel" data-bs-slide="prev">
+                        <button class="carousel-control-prev" type="button" data-bs-target="#palawanCarousel" data-bs-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Previous</span>
                         </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#boracayCarousel" data-bs-slide="next">
+                        <button class="carousel-control-next" type="button" data-bs-target="#palawanCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+     <!-- Bohol Modal -->
+    <div class="modal fade destination-modal" id="boholModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Bohol</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="boholCarousel" class="carousel slide destination-carousel" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="images/bohol-4.jpg" class="d-block w-100" alt="Bohol Tarsier">
+                                <div class="carousel-caption">
+                                    <h5>Bohol Tarsier Sanctuary</h5>
+                                    <p>These cute furry creatures are considered as the smallest primate in the world. The most notable feature of the tarsier is their eyes, which are bigger than its entire brain. </p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images/bohol-2.jpg" class="d-block w-100" alt="Man-made Forest">
+                                <div class="carousel-caption">
+                                    <h5>Bilar Man-made Forest</h5>
+                                    <p>A favorite stop-over for tourists going to and from the Chocolate Hills, the Bilar Man-made Forest is a two-kilometer stretch of dense forest made of red and white mahogany trees. The forest is part of a reforestation project more than 50 years ago.</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images/bohol-3.jpg" class="d-block w-100" alt="Loboc River Cruise">
+                                <div class="carousel-caption">
+                                    <h5>Loboc River Cruise</h5>
+                                    <p>Motorized bancas and floating restaurants take cruisers upstream passing by nipa trees, coconuts and other tropical flora. The two main destinations in the river are the Loctob Spring and Busay Falls and other tropical fauna. </p>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#boholCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#boholCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Siargao Modal -->
+    <div class="modal fade destination-modal" id="siargaoModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Siargao Island</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="siargaoCarousel" class="carousel slide destination-carousel" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="images/siargao-1.jpg" class="d-block w-100" alt="Surfing Capital of the Philippines">
+                                <div class="carousel-caption">
+                                    <h5>Surfing Capital of the Philippines</h5>
+                                    <p>Siargao is mainly responsible for introducing surfing to the country.</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images/siargao-5.jpg" class="d-block w-100" alt="Siargao Cave">   
+                                <div class="carousel-caption">
+                                    <h5>Cave Exploration</h5>
+                                    <p>Apart from surfing, Siargao is also open to other activities such as cave explorations and rock climbing.</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images/siargao-3.jpg" class="d-block w-100" alt="Siargao Cloud 9">
+                                <div class="carousel-caption">
+                                    <h5>Siargao Cloud 9</h5>
+                                    <p>Cloud 9 is world-famous for its thick, hollow tubes and fast-barreling right-hand waves that break over a reef. Most suitable for advanced nimble surfers, the Cloud 9 wave has been described as a death ride, crashing onto shallow razor-sharp coral. </p>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#siargaoCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#siargaoCarousel" data-bs-slide="next">
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Next</span>
                         </button>

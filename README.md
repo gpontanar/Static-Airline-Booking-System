@@ -537,4 +537,8 @@ Payment gateway integration for secure transactions
         - Revision with the Techinical Specifications Document narrowing the features down to 6 key features for the Airline Booking System.   
         - Revisions with layout and designs in Figma
 
+  - 10 Mar 2025:   
+        - Revision with the front-end images.   
+        - Revisions with layout and designs in Figma
+
 
