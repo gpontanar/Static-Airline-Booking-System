@@ -467,5 +467,26 @@ footer {
 .deal-card:hover {
     transform: scale(1.05);
 }  
-
 /* end */
+/* For login and sign-up Modal */
+.text-navy {
+    color: var(--navy-blue);
+}
+
+.text-navy:hover {
+    color: var(--red);
+}
+
+#signUpButton {
+    background-color: var(--navy-blue);
+    color: white;
+    transition: background-color 0.3s;
+}
+
+#signUpButton:hover {
+    background-color: var(--red);
+}
+
+input:invalid {
+    border-color: var(--red);
+}
