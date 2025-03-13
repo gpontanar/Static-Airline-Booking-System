@@ -360,7 +360,7 @@ footer {
     font-size: 0.9rem;
 }
 
-/* Modal */
+/* Destination Modal */
 .destination-modal .modal-content {
     border-radius: 10px;
     overflow: hidden;
@@ -392,7 +392,7 @@ footer {
     text-align: left;
 }
 
-/* Responsive adjustments */
+/* Responsive adjustments - Mobile*/
 @media (max-width: 768px) {
     .booking-tabs {
         flex-direction: column;
@@ -412,7 +412,8 @@ footer {
     }
     
     .destination-card, .deal-card {
-        height: 250px;
+        /* height: 250px; */
+        height: 500px;
         
     }
     #socials {
@@ -421,6 +422,26 @@ footer {
     }
     .social-icons {
         justify-content: center;
+    }
+    /* Footer ajustments for the links */
+    .footer-links-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 20px;
+    }
+
+    .footer-links-container .col-md-3 {
+        flex: 0 0 45%;
+        max-width: 45%;
+    }
+
+    .footer-links, .footer-links-r {
+        text-align: left;
+    }
+
+    .footer-links ul, .footer-links-r ul {
+        display: block;
     }
     
 }
@@ -467,7 +488,7 @@ footer {
 .deal-card:hover {
     transform: scale(1.05);
 }  
-/* end */
+
 /* For login and sign-up Modal */
 .text-navy {
     color: var(--navy-blue);
@@ -490,3 +511,19 @@ footer {
 input:invalid {
     border-color: var(--red);
 }
+/* For login button modal */
+.btn-login-submit {
+    background-color: var(--navy-blue);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-login-submit:hover {
+    background-color: var(--red);
+    color: white;
+}
+
