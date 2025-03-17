@@ -9,7 +9,10 @@ Joseph Ryan Caballero
 Grace Pontanar   
 Iasaiah Alves   
 Jerrelyn Del Pilar   
-Lia Clemente
+Lia Clemente   
+
+- **Github URL**:   
+https://gpontanar.github.io/Static-Airline-Booking-System/
 
 ## 2. Table of Contents
 1. [Introduction](#3-introduction)
@@ -542,3 +545,5 @@ Payment gateway integration for secure transactions
         - Revisions with layout and designs in Figma
 
 
+  - 17 Mar 2025:   
+        - Final revision for Login, Navbar and footer designs.
