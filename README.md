@@ -12,7 +12,7 @@ Jerrelyn Del Pilar
 Lia Clemente   
 
 - **Github URL**:   
-https://gpontanar.github.io/Static-Airline-Booking-System/
+https://gpontanar.github.io/static-airline-booking-system/
 
 ## 2. Table of Contents
 1. [Introduction](#3-introduction)
