@@ -58,7 +58,7 @@ body {
     
     .btn-login {
         display: block;
-        margin: 0 auto;
+        margin: 10px auto;
         width: 100px;
     }
     
@@ -295,6 +295,7 @@ body {
     margin-bottom: 15px;
 }
 
+/* For footer */
 footer {
     background-color: var(--navy-blue);
     color: white;
@@ -436,11 +437,11 @@ footer {
         max-width: 45%;
     }
 
-    .footer-links, .footer-links-r {
+    .footer-links {
         text-align: left;
     }
 
-    .footer-links ul, .footer-links-r ul {
+    .footer-links ul{
         display: block;
     }
     
@@ -526,4 +527,40 @@ input:invalid {
     background-color: var(--red);
     color: white;
 }
+/* Sign Up button in Navbar */
+.btn-signup {
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+    font-weight: 600;
+    padding: 5px 20px;
+    border-radius: 5px;
+    transition: all 0.3s;
+    margin-left: 10px;
+}
 
+.btn-signup:hover {
+    background-color: white;
+    color: var(--navy-blue);
+}
+
+/* Desktop adjustments */
+@media (min-width: 768px) {
+    .footer-links-container {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .footer-links-container .col-md-3 {
+        flex: 0 0 22%;
+        max-width: 22%;
+    }
+
+    .footer-links {
+        text-align: left;
+    }
+
+    .footer-links ul {
+        display: block;
+    }
+}
