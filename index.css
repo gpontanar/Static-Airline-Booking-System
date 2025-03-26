@@ -527,6 +527,39 @@ input:invalid {
     background-color: var(--red);
     color: white;
 }
+/* Style for the password input group */
+.input-group {
+    position: relative;
+}
+
+.input-group .form-control {
+    padding-right: 40px; /* Add space for the eye icon */
+}
+
+.input-group .btn-outline-secondary {
+    position: absolute;
+    top: 40%;
+    right: 5px;
+    transform: translateY(-50%);
+    border: none;
+    background: transparent;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.input-group .btn-outline-secondary i {
+    font-size: 1.2rem; /* Adjust the size of the eye icon */
+    color: var(--navy-blue);
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+/* .input-group .btn-outline-secondary i:hover {
+    color: var(--red);
+} */
 /* Sign Up button in Navbar */
 .btn-signup {
     background-color: transparent;
@@ -563,4 +596,39 @@ input:invalid {
     .footer-links ul {
         display: block;
     }
+}
+
+/* Search Flights */
+.flight-results {
+    padding: 50px 10%;
+    background-color: white;
+    color: black;
+}
+
+.flight-card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.airline-logo {
+    height: 50px;
+    margin-bottom: 10px;
+}
+.btn-back {
+    background-color: var(--navy-blue);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-back:hover {
+    background-color: var(--red);
+    color: white;
 }
